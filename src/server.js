@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
 require("dotenv").config();
+const mongoose = require("mongoose");
 const app = require("./app");
-const redisClient = require("./config/redis"); 
+const redisClient = require("./config/redis");
 
 const PORT = process.env.PORT || 3000;
 
