@@ -13,7 +13,6 @@ services:
     environment:
       - REDIS_URL=redis://redis:6379
       - MONGO_URI=${MONGO_URI}
-    env_file:
-      - .env
+      - PORT=3000
     depends_on:
       - redis
