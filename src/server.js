@@ -19,7 +19,7 @@ const startServer = async () => {
         setTimeout(() => reject(new Error("Redis connection timeout")), 10000);
       }
     });
-    console.log("✓ Connected to Redis!");
+    console.log("Connected to Redis!");
 
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server started and listening on port ${PORT}`);
@@ -31,7 +31,7 @@ const startServer = async () => {
 };
 
 process.on("SIGINT", async () => {
-  console.log("\nShutting down gracefully...");
+  console.log("\nShutting down...");
   await mongoose.connection.close();
   await redisClient.quit();
   process.exit(0);
