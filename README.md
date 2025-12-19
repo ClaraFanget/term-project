@@ -1,9 +1,9 @@
-# API Bookstore Backend Project – Assignment 2
+# API Bookstore Backend Project – Term Project
 
 ## 1. Project Overview
 
-This project is a RESTful API server developed as part of **Assignment 2**.
-The goal is to implement a backend system based on a database-driven API design, including authentication, authorization, validation, documentation, and deployment.
+This project is a RESTful API server developed as part of **Term Project**.
+The goal is to implement a backend system based on a database-driven API design, including authentication, authorization, validation, documentation, and deployment using Docker.
 
 ---
 
@@ -14,7 +14,7 @@ The goal is to implement a backend system based on a database-driven API design,
 * **Authentication**: JWT
 * **Documentation**: Swagger 
 * **Testing**: Postman + automated test scripts
-* **Deployment**: JCloud
+* **Deployment**: JCloud, Docker
 
 
 ---
@@ -25,16 +25,17 @@ The goal is to implement a backend system based on a database-driven API design,
 
 * Node.js (v18+ recommended)
 * npm
+* Docker
 
 ---
 
 ### 3.2 Installation
 
 ```bash
-https://github.com/ClaraFanget/assignment_2.git
+https://github.com/ClaraFanget/term-project.git
 ```
 ```bash
-cd assignment_2
+cd term_project
 ```
 ```bash
 npm install
@@ -52,6 +53,9 @@ JWT_SECRET=
 JWT_REFRESH_SECRET=
 MONGO_URI=
 ADMIN_PASSWORD=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+FIREBASE_PROJECT_ID=
 ```
 ---
 
@@ -65,13 +69,22 @@ This will populate the database with initial test data (users, books, etc.).
 
 ---
 
-### 3.5 Start the Server
+### 3.5 Start the server using Docker
+
+Requirement: Docker Desktop should be open on your laptop.
 
 ```bash
-npm run start
+docker-compose up -d --build
 ```
 
-The server will start and listen on the configured port.
+```bash
+docker logs -f bookstore-api
+```
+The server will start and listen on the following address:
+
+```bash
+http://http://localhost:8080
+```
 
 ---
 
@@ -90,7 +103,7 @@ This command runs automated tests for API endpoints.
 * **Swagger UI**:
 
   ```
-  113.198.66.75:13075/docs
+  113.198.66.75:10089/docs
   ```
 
 Swagger documentation includes:
@@ -135,6 +148,8 @@ repo-root
 │  └─ app.js
 ├─ scripts/
 │  └─ seed.js
+├─ Dockerfile
+├─ docker-compose.yml
 └─ tests/
 ```
 
@@ -145,4 +160,4 @@ repo-root
 
 * **Student Name**: *Clara Fanget*
 * **Course**: Backend API Development
-* **Assignment**: Assignment 2
+* **Assignment**: Term Project
